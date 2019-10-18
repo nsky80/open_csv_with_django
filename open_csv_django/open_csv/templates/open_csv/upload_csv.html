@@ -1,0 +1,23 @@
+<html>
+    <head>
+            <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    </head>
+    <body>
+{% include 'open_csv/messaging.html' %}
+
+<form action="{% url 'open_csv:upload_csv' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!-- <input type="file" name="csv_file1"> -->
+    <input id="id_docfile" type="file" name="csv_file"/>
+
+    <input type="submit" value="Upload">
+</form>
+<script>  M.AutoInit();</script>
+</body>
+
+</html>

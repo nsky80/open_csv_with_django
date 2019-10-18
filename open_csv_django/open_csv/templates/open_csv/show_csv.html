@@ -1,0 +1,35 @@
+<script type="text/javascript">
+    var received_data = {{csv_data|safe}};
+    // document.write(received_data['Name']);
+</script>
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Data of CSV are</h1>
+<p>It is output through JSON.</p>
+
+<script>
+console.log(received_data)
+for (x in received_data){
+    if(x == "columns"){
+
+            document.write("<b>" + received_data[x]+ "</b><hr>");
+    }
+    if(x == "data"){
+        for (d in x){
+            document.write(received_data[x][d] + "<br>");
+        }
+    }
+
+}
+document.write("<br>");
+// for (x in received_data) {
+//   document.write(received_data[x] + "<br>");
+// };
+
+</script>
+<br><br>
+{{csv_data|safe}}
+</body>
+</html>
